@@ -12,6 +12,11 @@ var server = ws.createServer(function (conn) {
     conn.on("close", function (code, reason) {
         console.log("Connection closed")
     })
+
+    conn.on('error', function() {
+        console.log("Error")
+    })
+
 }).listen(8001)
 
 function broadcast(str) {
