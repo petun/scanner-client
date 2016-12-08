@@ -83,6 +83,7 @@ body {
   display: flex;
   flex-direction: row; }
   .phase__number {
+    margin-right: 12px;
     background: #989898;
     width: 50px;
     height: 50px;
@@ -104,14 +105,19 @@ body {
   .phase.-done .phase__number {
     background: #6bd3ff; }
   .phase.-done .phase__name {
-    color: #3e3e3e; }
+    color: #989898; }
+
+.phase-list .phase {
+  margin: 0 0 40px; }
 
 .phase-one {
-  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center; }
+  .phase-one__text {
+    font-size: 17px;
+    line-height: 1.5; }
 
 /*# sourceMappingURL=style.css.map */

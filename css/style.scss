@@ -100,6 +100,7 @@ body {
   $w: 50px;
 
   &__number {
+    margin-right: 12px;
     background: #989898;
     width: $w;
     height: $w;
@@ -134,21 +135,20 @@ body {
     }
 
     .phase__name {
-      color: #3e3e3e;
+      color: #989898;
     }
   }
 }
 
 .phase-list {
   .phase {
-
+    margin: 0 0 40px;
   }
 }
 
 
 
 .phase-one {
-  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,5 +158,7 @@ body {
 
   }
   &__text {
+    font-size: 17px;
+    line-height: 1.5;
   }
 }

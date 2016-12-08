@@ -1,0 +1,2 @@
+ButtonsModule.init();
+SocketClientModule.init();
