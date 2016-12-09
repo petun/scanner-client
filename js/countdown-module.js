@@ -1,16 +1,19 @@
 var CountdownModule = (function () {
 
-    var settings = {
-        selector: '.countdown',
-        startFrom: 10,
-        interval: 1000,
-        onComplete: function () {
-        }
-    };
+    var settings;
 
     var $element, currentNum, intervalId;
 
-    function _init(params) { //@todo
+    function _init(options) {
+
+        settings = $.extend({
+            selector: '.countdown',
+            startFrom: 10,
+            interval: 1000,
+            onComplete: function () {
+            }
+        }, options);
+
         $element = $(settings.selector);
     }
 

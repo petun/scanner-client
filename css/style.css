@@ -120,4 +120,25 @@ body {
     font-size: 17px;
     line-height: 1.5; }
 
+.phase-two .phase-two__counter {
+  font-size: 150px;
+  line-height: 150px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 20px; }
+
+.phase-three__step {
+  text-align: center;
+  font-size: 40px; }
+.phase-three__title {
+  font-size: 24px; }
+
+.phase-four {
+  text-align: center; }
+  .phase-four__preview {
+    margin: 0 0 20px; }
+
+.phase-five {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
