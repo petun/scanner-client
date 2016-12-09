@@ -1,13 +1,19 @@
-ButtonsModule.init();
-SocketClientModule.init('ws://localhost:8001');
+$(function() {
+    SocketClientModule.init('ws://localhost:8001');
 
-ButtonsModule.setActive(1);
+    PhasePageSelectorModule.init();
+    PhasePageSelectorModule.setActive(1);
 
-CountdownModule.init({
-    selector: '.phase-two__counter',
-    onComplete: function() {
-        alert('Yes');
-    }
+    PhaseOneModule.init(PhasePageSelectorModule);
+    PhaseTwoModule.init(PhasePageSelectorModule, SocketClientModule, CountdownModule);
+    PhaseThreeModule.init(PhasePageSelectorModule, SocketClientModule);
+    PhaseFourModule.init(PhasePageSelectorModule, SocketClientModule);
+
+
 });
 
-CountdownModule.prepareTimer();
+
+
+
+
+

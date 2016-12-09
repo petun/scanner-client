@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-7">
                 <div class="phase-content">
-                    <div class="phase-one">
+                    <div class="phase-one phase-block">
                         <div class="phase-one__text">
                             <div class="alert alert-info">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur atque
@@ -93,7 +93,7 @@
                         </div>
                         <a href="#" class="btn btn-success btn-lg phase-one__start">Начало</a>
                     </div>
-                    <div class="phase-two">
+                    <div class="phase-two phase-block">
                         <div class="phase-two__counter">
 
                         </div>
@@ -103,8 +103,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phase-three">
-                        <div class="phase-three__step">
+                    <div class="phase-three phase-block">
+                        <div class="phase-three__step -scan">
                             <div class="mb20">
                                 <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
                                 <span class="sr-only">Loading...</span>
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="phase-three__step">
+                        <div class="phase-three__step -processing">
                             <div class="mb20">
                                 <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
                                 <span class="sr-only">Loading...</span>
@@ -127,18 +127,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phase-four">
+                    <div class="phase-four phase-block">
                         <div class="phase-four__preview">
                             <img src="img/result.png" alt=""/>
                         </div>
                         <div class="phase-four__select">
-                            <p><a href="#" class="btn bg-success btn-lg">Отлично получилось! Хочу!</a></p>
+                            <p><a href="#" class="btn bg-success btn-lg" id="complete">Отлично получилось! Хочу!</a></p>
                             <p>
-                                <small><a href="#">Не нравится, давай заново</a></small>
+                                <small><a href="#" id="discard">Не нравится, давай заново</a></small>
                             </p>
                         </div>
                     </div>
-                    <div class="phase-five">
+                    <div class="phase-five phase-block">
                         <div class="phase-five__form">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, sunt!</p>
                             <form>
@@ -163,9 +163,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/buttons-module.js"></script>
+<script src="js/phase-page-selector-module.js"></script>
 <script src="js/socket-client.js"></script>
 <script src="js/countdown-module.js"></script>
+
+<script src="js/phase-one-module.js"></script>
+<script src="js/phase-two-module.js"></script>
+<script src="js/phase-three-module.js"></script>
+<script src="js/phase-four-module.js"></script>
+
 <script src="js/script.js"></script>
 </body>
 </html>
