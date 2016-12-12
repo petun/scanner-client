@@ -8,8 +8,8 @@ $(function() {
     PhaseTwoModule.init(PhasePageSelectorModule, SocketClientModule, CountdownModule);
     PhaseThreeModule.init(PhasePageSelectorModule, SocketClientModule);
     PhaseFourModule.init(PhasePageSelectorModule, SocketClientModule);
-
-
+    PhaseFiveModule.init(PhasePageSelectorModule, SocketClientModule);
+    PhaseSixModule.init(PhasePageSelectorModule, 5000);
 });
 
 

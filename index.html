@@ -104,6 +104,17 @@
                         </div>
                     </div>
                     <div class="phase-three phase-block">
+                        <div class="phase-three__step -prepare">
+                            <div class="mb20">
+                                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="phase-three__title">
+                                <div class="alert alert-warning">
+                                    Подготовка сканнера.
+                                </div>
+                            </div>
+                        </div>
                         <div class="phase-three__step -scan">
                             <div class="mb20">
                                 <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
@@ -126,6 +137,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="phase-three__error">
+                            <div class="phase-three__title">
+                                <div class="alert alert-danger mb20">
+
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-default phase-three__restart"><i class="fa fa-refresh" aria-hidden="true"></i> Перезапустить сканирование</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="phase-four phase-block">
                         <div class="phase-four__preview">
@@ -139,12 +161,31 @@
                         </div>
                     </div>
                     <div class="phase-five phase-block">
-                        <div class="phase-five__form">
+                        <div class="phase-five__form mb20">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, sunt!</p>
                             <form>
-                                <legeng>Тут будет форма.. Результат будет равен id пользователя</legeng>
-                                <input type="submit" value="Сохранить" class="btn btn-success btn-lg" />
+                                <p class="mb20">Тут будет форма.. Результат будет равен id пользователя</p>
+                                <div class="">
+                                    <input type="submit" value="Сохранить" class="btn btn-success btn-lg" />
+                                </div>
                             </form>
+                        </div>
+                        <div class="phase-five__error">
+                            <div class="alert alert-danger">
+                                Призошла ошибка во время отправки данных. Проверте правильность формы и повторите запрос позже.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phase-six phase-block">
+                        <div class="phase-six__content">
+                            <div class="alert alert-success">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, quas?</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores atque beatae,
+                                    delectus deserunt doloribus ducimus earum ex exercitationem, harum in ipsam iste
+                                    labore libero magni nemo obcaecati praesentium quasi quibusdam ratione repellendus
+                                    veritatis vitae? Culpa excepturi sed similique, sunt ullam voluptas. Debitis
+                                    dolorem, harum iusto laboriosam omnis quibusdam quo.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,6 +204,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/socket-commands.js"></script>
 <script src="js/phase-page-selector-module.js"></script>
 <script src="js/socket-client.js"></script>
 <script src="js/countdown-module.js"></script>
@@ -171,6 +213,8 @@
 <script src="js/phase-two-module.js"></script>
 <script src="js/phase-three-module.js"></script>
 <script src="js/phase-four-module.js"></script>
+<script src="js/phase-five-module.js"></script>
+<script src="js/phase-six-module.js"></script>
 
 <script src="js/script.js"></script>
 </body>

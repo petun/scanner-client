@@ -26,11 +26,19 @@
       - scanning_succeeded
       - scanning_failed
 
-scan_complete -
-raw_mesh_complete - stream url
 
-upload ->
-discard ->
+```javascript
+SocketClientModule.echo({command: "scnanning_started"});
+SocketClientModule.echo({command: "scanner_has_enough_data"});
+SocketClientModule.echo({command: "scanning_succeeded"});
+
+
+SocketClientModule.echo({command: "scanning_failed_to_start"});
+SocketClientModule.echo({command: "scanning_failed"});
+
+SocketClientModule.echo({command: "upload_succeeded"});
+SocketClientModule.echo({command: "upload_failed"});
+```
 
 
 
