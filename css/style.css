@@ -141,4 +141,16 @@ body {
 .phase-five {
   text-align: center; }
 
+.connection-state {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px #989898 solid; }
+  .connection-state.-established {
+    background: forestgreen; }
+  .connection-state.-lost {
+    background: red; }
+  .connection-state.-connecting {
+    background: yellow; }
+
 /*# sourceMappingURL=style.css.map */

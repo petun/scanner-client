@@ -8,23 +8,34 @@ var SocketClientModule = (function () {
         conn = new WebSocket(url);
         conn.onmessage = function(event) {
             console.log("Получены данные " + event.data);
-
             var data = JSON.parse(event.data);
+            notifySubscribers(data);
+        };
 
-            console.log('notify ' + handlers.length + ' handlers');
-            handlers.forEach(function(s) {
-                s(data);
-            });
+        conn.onopen = function() {
+            notifySubscribers({command: SocketCommands.connectionEstablished});
+        };
+
+        conn.onclose = function() {
+            notifySubscribers({command: SocketCommands.connectionLost});
         };
     }
 
     function checkConnection() {
         if (conn.readyState == conn.CLOSED) {
-            console.log('Try to reconnect to the ' + url);
+            console.error('Error connection to ' +  url + '. Try to reconnect to the ' + url);
             connect();
         } else {
-            console.log('Connection is OK');
+            //console.log('Connection is OK');
         }
+    }
+
+    function notifySubscribers(message) {
+        console.log('notify ' + handlers.length + ' handlers');
+        handlers.forEach(function(s) {
+            s(message);
+        });
+
     }
 
     function _init(serverUrl) {

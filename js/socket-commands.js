@@ -7,5 +7,8 @@ var SocketCommands = {
     scanningFailed: "scanning_failed", // server
     upload: "upload", // client
     uploadSucceeded: "upload_succeeded", //server
-    uploadFailed : "upload_failed" // server
+    uploadFailed : "upload_failed", // server,
+
+    connectionLost: "connection_lost", // client (only for internal use)
+    connectionEstablished: "connection_established" // client (only for internal use)
 };

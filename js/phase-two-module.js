@@ -21,7 +21,7 @@ var PhaseTwoModule = (function(){
         countDownModule.init({
             selector: '.phase-two__counter',
             startFrom: 1,
-            interval: 1000,
+            interval: 5000,
             onComplete: function () {
                 selectorModule.setActive(3);
             }

@@ -196,3 +196,23 @@ body {
 .phase-five {
   text-align: center;
 }
+
+
+.connection-state {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px #989898 solid;
+
+  &.-established {
+    background: forestgreen;
+  }
+
+  &.-lost {
+    background: red;
+  }
+
+  &.-connecting {
+    background: yellow;
+  }
+}
