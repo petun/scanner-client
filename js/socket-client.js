@@ -1,6 +1,7 @@
 var SocketClientModule = (function () {
 
     var url, conn;
+    var globalLoader;
 
     var handlers = [];
 
@@ -13,10 +14,12 @@ var SocketClientModule = (function () {
         };
 
         conn.onopen = function() {
+            globalLoader.hide();
             notifySubscribers({command: SocketCommands.connectionEstablished});
         };
 
         conn.onclose = function() {
+            globalLoader.show().setText('Восстановление соединения...');
             notifySubscribers({command: SocketCommands.connectionLost});
         };
     }
@@ -38,8 +41,9 @@ var SocketClientModule = (function () {
 
     }
 
-    function _init(serverUrl) {
+    function _init(serverUrl, GlobalLoader) {
         url = serverUrl;
+        globalLoader = GlobalLoader;
         connect();
 
         setInterval(checkConnection, 5000);

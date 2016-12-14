@@ -1,19 +1,26 @@
-var PhaseFourModule = (function(){
+var PhaseFourModule = (function () {
 
     var selectorModule, socketModule;
 
-    var $complete, $discard;
+    var $complete, $discard, $preview;
 
     function onPageChange(num) {
-
+        if (num == 4) {
+            $preview.addClass('-loading');
+            $complete.hide();
+            $discard.hide();
+        }
     }
 
     function onSocketMessage(data) {
-
+        if (data.command == SocketCommands.scanningSucceeded) {
+            $preview.removeClass('-loading');
+            $complete.show();
+            $discard.show();
+        }
     }
 
-    function _init(pageSelectorModule, sockets)
-    {
+    function _init(pageSelectorModule, sockets) {
         selectorModule = pageSelectorModule;
         selectorModule.addPageChangeHandler(onPageChange);
 
@@ -22,13 +29,14 @@ var PhaseFourModule = (function(){
 
         $complete = $('#complete');
         $discard = $('#discard');
+        $preview = $('.phase-four__preview');
 
-        $complete.on('click', function(e) {
+        $complete.on('click', function (e) {
             e.preventDefault();
             selectorModule.setActive(5);
-        })
+        });
 
-        $discard.on('click', function(e) {
+        $discard.on('click', function (e) {
             e.preventDefault();
             selectorModule.setActive(1);
         });

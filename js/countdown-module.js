@@ -9,7 +9,7 @@ var CountdownModule = (function () {
         settings = $.extend({
             selector: '.countdown',
             startFrom: 10,
-            interval: 5000,
+            interval: 1000,
             onComplete: function () {
             }
         }, options);

@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>ShareCloth Scanner Client</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;amp;subset=cyrillic" media="screen" rel="stylesheet" type="text/css">
+
+
+    <!-- fotorama.css & fotorama.js. -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,178 +30,163 @@
 <body>
 <div class="container">
     <div class="header clearfix">
-        <div class="pull-left">
-            <h3 class="text-muted">ShareCloth Scanner Client</h3>
-        </div>
-        <div class="pull-right">
-            <div class="connection-state">
+        <h3><a href="">Welcome to ShareCloth Scanner</a> </h3>
+        <div class="connection-state"><i class="fa fa-wifi" aria-hidden="true"></i></div>
+    </div>
+    <div class="container-fluid">
+        <div class="phase-list">
+            <div class="phase">
+                <div class="phase__number">
+                    1
+                </div>
+                <div class="phase__name">
+                    Welcome
+                </div>
+            </div>
+            <div class="phase">
+                <div class="phase__number">
+                    2
+                </div>
+                <div class="phase__name">
+                    Обучение
+                </div>
+            </div>
+            <div class="phase">
+                <div class="phase__number">
+                    3
+                </div>
+                <div class="phase__name">
+                    Сканирование
+                </div>
+            </div>
+            <div class="phase">
+                <div class="phase__number">
+                    4
+                </div>
+                <div class="phase__name">
+                    Результат
+                </div>
+            </div>
+            <div class="phase">
+                <div class="phase__number">
+                    5
+                </div>
+                <div class="phase__name">
+                    Профиль
+                </div>
+            </div>
+            <div class="phase" style="display: none;">
+                <div class="phase__number">
+                    6
+                </div>
+                <div class="phase__name">
+                    Готово
+                </div>
             </div>
         </div>
     </div>
 
     <section class="main-content">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="phase-list">
-                    <div class="phase">
-                        <div class="phase__number">
-                            1
-                        </div>
-                        <div class="phase__name">
-                            Обучение
+        <div class="phase-content">
+            <div class="phase-one phase-block">
+                <div class="phase-one__preview ta-center">
+                    <img src="http://www.informance-design.com/blog/wp-content/uploads/2013/07/3dScan_01.jpg" alt=""/>
+                </div>
+                <div class="phase-one__text">
+                    <p>Это позволит создать трехмерный скан тела</p>
+                </div>
+                <div class="ta-center">
+                    <a href="#" class="btn btn-success btn-xlg phase-one__start">Начать</a>
+                </div>
+            </div>
+            <div class="phase-two phase-block ta-center">
+                <div class="phase-two__gallery">
+                    <div class="fotorama mb20" data-width="400" data-height="300">
+                        <img src="http://i0.wp.com/www.ayushveda.com/dietfitness/wp-content/uploads/2008/11/salman-khan-body.jpg?fit=300%2C400" alt="" />
+                        <img src="http://bodyglove.com/wp-content/uploads/2015/03/BG_2016_Women_Chacha.jpg?x53053" alt="" />
+                        <img src="http://cdn.shopify.com/s/files/1/1159/7120/products/Body_only_grande.jpg?v=1454977406" alt="" />
+                    </div>
+
+                    <p><a href="#" class="btn btn-default btn-xlg">Начать сканирование</a></p>
+                </div>
+                <div class="phase-two__counter">
+
+                </div>
+            </div>
+            <div class="phase-three phase-block">
+                <!--
+                <div class="phase-three__step -prepare">
+                    <div class="mb20">
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="phase-three__title">
+                        <div class="alert alert-default">
+                            Подготовка сканнера...
                         </div>
                     </div>
-                    <div class="phase">
-                        <div class="phase__number">
-                            2
-                        </div>
-                        <div class="phase__name">
-                            Старт
+                </div>
+                <div class="phase-three__step -scan">
+                    <div class="mb20">
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="phase-three__title">
+                        <div class="alert alert-default">
+                            Идет сканирование... Старайтесь не двигаться.
                         </div>
                     </div>
-                    <div class="phase">
-                        <div class="phase__number">
-                            3
+                </div>-->
+                <div class="phase-three__error">
+                    <div class="phase-three__title">
+                        <div class="alert alert-danger mb20">
+
                         </div>
-                        <div class="phase__name">
-                            Сканирование
-                        </div>
-                    </div>
-                    <div class="phase">
-                        <div class="phase__number">
-                            4
-                        </div>
-                        <div class="phase__name">
-                            Результат
-                        </div>
-                    </div>
-                    <div class="phase">
-                        <div class="phase__number">
-                            5
-                        </div>
-                        <div class="phase__name">
-                            Данные
-                        </div>
-                    </div>
-                    <div class="phase">
-                        <div class="phase__number">
-                            6
-                        </div>
-                        <div class="phase__name">
-                            Готово
+                        <div>
+                            <a href="#" class="btn btn-default phase-three__restart"><i class="fa fa-refresh"
+                                                                                        aria-hidden="true"></i>
+                                Перезапустить сканирование</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="phase-content">
-                    <div class="phase-one phase-block">
-                        <div class="phase-one__text">
-                            <div class="alert alert-info">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur atque
-                                    consequuntur deserunt dignissimos distinctio dolor, est id impedit ipsam magnam
-                                    minus numquam, optio quos reiciendis repellat sed suscipit! Ab consectetur corporis
-                                    doloremque dolorum est exercitationem explicabo impedit maxime modi molestias
-                                    necessitatibus nesciunt porro quaerat sunt tempore temporibus, velit voluptates?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, tempora.</p>
-                            </div>
+            <div class="phase-four phase-block">
+                <div class="phase-four__preview">
+                    <img src="img/result.png" alt=""/>
+                </div>
+                <div class="phase-four__select">
+                    <p><a href="#" class="btn btn-success btn-xlg" id="complete">Отлично получилось! Хочу!</a></p>
+                    <p>
+                        <small><a href="#" id="discard">Не нравится, давай заново</a></small>
+                    </p>
+                </div>
+            </div>
+            <div class="phase-five phase-block">
+                <div class="phase-five__form mb20">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, sunt!</p>
+                    <form>
+                        <p class="mb20">Тут будет форма.. Результат будет равен id пользователя</p>
+                        <div class="">
+                            <input type="submit" value="Сохранить" class="btn btn-success btn-lg"/>
                         </div>
-                        <a href="#" class="btn btn-success btn-lg phase-one__start">Начало</a>
+                    </form>
+                </div>
+                <div class="phase-five__error">
+                    <div class="alert alert-danger">
+                        Призошла ошибка во время отправки данных. Проверте правильность формы и повторите запрос
+                        позже.
                     </div>
-                    <div class="phase-two phase-block">
-                        <div class="phase-two__counter">
-
-                        </div>
-                        <div class="phase-two__warning">
-                            <div class="alert alert-warning">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, praesentium?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phase-three phase-block">
-                        <div class="phase-three__step -prepare">
-                            <div class="mb20">
-                                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <div class="phase-three__title">
-                                <div class="alert alert-warning">
-                                    Подготовка сканнера.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="phase-three__step -scan">
-                            <div class="mb20">
-                                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <div class="phase-three__title">
-                                <div class="alert alert-warning">
-                                    Идет сканирование... Старайтесь не двигаться.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="phase-three__step -processing">
-                            <div class="mb20">
-                                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <div class="phase-three__title">
-                                <div class="alert alert-info">
-                                    Идет обработка данных. Можете двигаться.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="phase-three__error">
-                            <div class="phase-three__title">
-                                <div class="alert alert-danger mb20">
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-default phase-three__restart"><i class="fa fa-refresh" aria-hidden="true"></i> Перезапустить сканирование</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="phase-four phase-block">
-                        <div class="phase-four__preview">
-                            <img src="img/result.png" alt=""/>
-                        </div>
-                        <div class="phase-four__select">
-                            <p><a href="#" class="btn bg-success btn-lg" id="complete">Отлично получилось! Хочу!</a></p>
-                            <p>
-                                <small><a href="#" id="discard">Не нравится, давай заново</a></small>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="phase-five phase-block">
-                        <div class="phase-five__form mb20">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, sunt!</p>
-                            <form>
-                                <p class="mb20">Тут будет форма.. Результат будет равен id пользователя</p>
-                                <div class="">
-                                    <input type="submit" value="Сохранить" class="btn btn-success btn-lg" />
-                                </div>
-                            </form>
-                        </div>
-                        <div class="phase-five__error">
-                            <div class="alert alert-danger">
-                                Призошла ошибка во время отправки данных. Проверте правильность формы и повторите запрос позже.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phase-six phase-block">
-                        <div class="phase-six__content">
-                            <div class="alert alert-success">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, quas?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores atque beatae,
-                                    delectus deserunt doloribus ducimus earum ex exercitationem, harum in ipsam iste
-                                    labore libero magni nemo obcaecati praesentium quasi quibusdam ratione repellendus
-                                    veritatis vitae? Culpa excepturi sed similique, sunt ullam voluptas. Debitis
-                                    dolorem, harum iusto laboriosam omnis quibusdam quo.</p>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="phase-six phase-block">
+                <div class="phase-six__content">
+                    <div class="alert alert-success">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, quas?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores atque beatae,
+                            delectus deserunt doloribus ducimus earum ex exercitationem, harum in ipsam iste
+                            labore libero magni nemo obcaecati praesentium quasi quibusdam ratione repellendus
+                            veritatis vitae? Culpa excepturi sed similique, sunt ullam voluptas. Debitis
+                            dolorem, harum iusto laboriosam omnis quibusdam quo.</p>
                     </div>
                 </div>
             </div>
@@ -205,15 +199,29 @@
 
 </div> <!-- /container -->
 
+<div class="modal-backdrop fade in loader" style="display: none;">
+    <div class="loader__icon">
+        <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="loader__text">
+        Загрузка сканера...
+    </div>
+</div>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/socket-commands.js"></script>
 <script src="js/phase-page-selector-module.js"></script>
 <script src="js/socket-client.js"></script>
 <script src="js/countdown-module.js"></script>
+<script src="js/global-loader.js"></script>
 
 <script src="js/phase-one-module.js"></script>
 <script src="js/phase-two-module.js"></script>

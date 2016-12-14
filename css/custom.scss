@@ -1,0 +1,149 @@
+$ipad-width: 768px;
+
+@import "base";
+@import "helpers";
+@import "layout";
+@import "blocks/vendor-override";
+
+.phase {
+  display: flex;
+  flex-direction: row;
+  $w: 20px;
+
+  &__number {
+    margin-right: 12px;
+    background: #989898;
+    width: $w;
+    height: $w;
+    line-height: $w;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: $w;
+  }
+
+  &__name {
+    font-size: 12px;
+    line-height: $w;
+    font-weight: bold;
+    color: #989898;
+  }
+
+  &.-active {
+    .phase__number {
+      background: #2ecc71;
+    }
+
+    .phase__name {
+      color: #3e3e3e;
+    }
+  }
+
+  &.-done {
+    .phase__number {
+      background: #00cc2c;
+    }
+
+    .phase__name {
+      color: #989898;
+    }
+  }
+}
+
+.phase-list {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px #eee solid;
+  margin: 0 0 20px;
+  .phase {
+    float: left;
+    border-left: 1px #eee solid;
+    border-right: 1px #eee solid;
+    padding: 0 20px;
+  }
+}
+
+
+
+.phase-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  &__start {
+
+  }
+  &__text {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  &__preview {
+    margin: 0 0 20px;
+  }
+}
+
+.phase-two {
+  .phase-two__counter {
+    font-size: 150px;
+    line-height: 150px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+}
+
+
+.phase-three {
+  &__step {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  &__title {
+    font-size: 24px;
+
+  }
+}
+
+.phase-four {
+  text-align: center;
+  &__preview {
+    margin: 0 auto 20px;
+    width: 400px;
+    height: 500px;
+    position: relative;
+  }
+}
+
+.phase-five {
+  text-align: center;
+}
+
+
+.modal-backdrop.in.loader {
+  opacity: .8;
+  color: white;
+}
+
+.loader {
+  &__icon {
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    font-size: 50px;
+    transform: translateX(-50%);
+  }
+
+  &__text {
+    position: absolute;
+    left: 10%;
+    top: 402px;
+    font-size: 50px;
+    line-height: 1.4;
+    text-align: center;
+    right: 10%;
+  }
+}

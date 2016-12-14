@@ -1,0 +1,51 @@
+.ui-slider .ui-slider-handle {
+  width: 2.4em !important;
+  height: 1.4em !important;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .form-inline .form-control {
+    margin-bottom: 0;
+  }
+}
+
+.input-group.-transparent {
+  .input-group-addon {
+    background: transparent;
+    border: none;
+    color: #949494;
+  }
+
+  .form-control {
+      box-shadow: none;
+      border:none;
+      background: transparent;
+  }
+}
+
+.modal-title-site {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 23px;
+  color: #353535;
+}
+
+.modal-header {
+  color: #353535;
+  background: white;
+}
+
+.btn.btn-xlg {
+  border-radius: 4px;
+  font-size: 26px;
+  line-height: 1.471;
+  padding: 20px 30px;
+}
+
+.fotorama__wrap {
+  margin: 0 auto;
+}
+
+.alert {
+  border-left: none;
+}
