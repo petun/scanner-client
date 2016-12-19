@@ -50,6 +50,8 @@ var SocketClientModule = (function () {
     }
 
     function _send(message) {
+        console.log('Socket client: sending command');
+        console.log(message);
         conn.send(JSON.stringify(message));
     }
 

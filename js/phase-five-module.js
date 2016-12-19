@@ -13,11 +13,17 @@ var PhaseFiveModule = (function(){
 
     function onPageChange(num) {
         if (num == 5) {
+
             $('.phase-five__form .nav.nav-tabs a').click(function (e) {
                 e.preventDefault()
                 $(this).tab('show')
             });
+
             hideErrors();
+            $codeControls.hide();
+
+            $newUserForm.find('input[type=text]').value('');
+            $loginUserForm.find('input[type=text]').value('');
         }
     }
 
@@ -29,13 +35,24 @@ var PhaseFiveModule = (function(){
 
         if (data.command == SocketCommands.userRegError) {
             $('input[type=submit]') .button('reset'); //@todo
-            $loginError.text('Ошибка при регистрации пользователя. Попробуйте еще раз.').show();
+            $newUserError.text('Ошибка при регистрации проверке номера. Попробуйте еще раз.').show();
+        }
+
+        if (data.command == SocketCommands.userRegConfirmError) {
+            $('input[type=submit]') .button('reset'); //@todo
+            $newUserError.text('Неверный код активации. Попробуйте еще раз.').show();
         }
 
         if (data.command == SocketCommands.userLoginSuccess || data.command == SocketCommands.userRegConfirmSuccess) {
             $('input[type=submit]') .button('reset');
             hideErrors();
             selectorModule.setActive(6);
+        }
+
+        if (data.command == SocketCommands.userRegSuccess) {
+            $('input[type=submit]') .button('reset');
+            $codeControls.show();
+            hideErrors();
         }
     }
 
@@ -58,13 +75,16 @@ var PhaseFiveModule = (function(){
 
         $newUserForm.on('submit', function(e) {
             e.preventDefault();
-            $loginError.hide();
+            $newUserError.hide();
 
             var $button = $newUserForm.find('[type=submit]');
             $button.button('loading');
 
+            var isCodeSend = $codeControls.css('display') == 'block';
+            var command = isCodeSend ? SocketCommands.userRegConfirm : SocketCommands.userReg;
+
             socketModule.send({
-                command: SocketCommands.userReg,
+                command: command,
                 data: $newUserForm.serializeArray()
             });
         });
