@@ -2,7 +2,7 @@ var PhaseFourModule = (function () {
 
     var selectorModule, socketModule;
 
-    var $complete, $discard, $preview;
+    var $complete, $discard, $preview, $previewImg;
 
     function onPageChange(num) {
         if (num == 4) {
@@ -30,6 +30,22 @@ var PhaseFourModule = (function () {
         $complete = $('#complete');
         $discard = $('#discard');
         $preview = $('.phase-four__preview');
+        $previewImg = $preview.find('img');
+
+
+        $previewImg.on('touchstart', function(e) {
+            console.log('touch started');
+            socketModule.send({
+                command: SocketCommands.startRotate
+            });
+        });
+
+        $previewImg.on('touchend', function() {
+            console.log('touch ended');
+            socketModule.send({
+                command: SocketCommands.stopRotate
+            });
+        });
 
         $complete.on('click', function (e) {
             e.preventDefault();

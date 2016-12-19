@@ -2,22 +2,39 @@ var PhaseFiveModule = (function(){
 
     var selectorModule, socketModule;
 
-    var $form, $submit, $error;
+    var $loginError, $newUserError;
+
+    var $newUserForm, $loginUserForm, $codeControls;
+
+    function hideErrors() {
+        $loginError.hide();
+        $newUserError.hide();
+    }
 
     function onPageChange(num) {
-
-
+        if (num == 5) {
+            $('.phase-five__form .nav.nav-tabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            });
+            hideErrors();
+        }
     }
 
     function onSocketMessage(data) {
-
-        if (data.command == SocketCommands.uploadFailed) {
-            $submit.button('reset');
-            $error.show();
+        if (data.command == SocketCommands.userLoginError) {
+            $('input[type=submit]') .button('reset'); //@todo
+            $loginError.text('Ошибка при входе в систему. Проверь правильность логина и пароля.').show();
         }
 
-        if (data.command == SocketCommands.uploadSucceeded) {
-            $submit.button('reset');
+        if (data.command == SocketCommands.userRegError) {
+            $('input[type=submit]') .button('reset'); //@todo
+            $loginError.text('Ошибка при регистрации пользователя. Попробуйте еще раз.').show();
+        }
+
+        if (data.command == SocketCommands.userLoginSuccess || data.command == SocketCommands.userRegConfirmSuccess) {
+            $('input[type=submit]') .button('reset');
+            hideErrors();
             selectorModule.setActive(6);
         }
     }
@@ -30,24 +47,41 @@ var PhaseFiveModule = (function(){
         socketModule = sockets;
         socketModule.addSubscriber(onSocketMessage);
 
-        $form = $('.phase-five__form');
-        $submit = $form.find('[type=submit]');
-        $error = $('.phase-five__error');
-        $error.hide();
+        $newUserForm = $('.new-user');
+        $loginUserForm = $('.login-user');
+        $codeControls = $('#code-controls');
+        $codeControls.hide();
 
-        $submit.on('click', function(e) {
+        $loginError = $('.phase-five__error.-login .alert');
+        $newUserError = $('.phase-five__error.-new .alert');
+        hideErrors();
+
+        $newUserForm.on('submit', function(e) {
             e.preventDefault();
-            $error.hide();
-            socketModule.send({
-                command: SocketCommands.upload,
-                user: {
-                    "id": 170,
-                    "telephone": "+7 (123) 123-12-12"
-                }
-            });
+            $loginError.hide();
 
-            $submit.button('loading');
+            var $button = $newUserForm.find('[type=submit]');
+            $button.button('loading');
+
+            socketModule.send({
+                command: SocketCommands.userReg,
+                data: $newUserForm.serializeArray()
+            });
         });
+
+        $loginUserForm.on('submit', function(e) {
+            e.preventDefault();
+            $loginError.hide();
+
+            var $button = $loginUserForm.find('[type=submit]');
+            $button.button('loading');
+
+            socketModule.send({
+                command: SocketCommands.userLogin,
+                data: $newUserForm.serializeArray()
+            });
+        });
+
     }
 
     return {

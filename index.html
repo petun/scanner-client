@@ -7,17 +7,17 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>ShareCloth Scanner Client</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;amp;subset=cyrillic" media="screen" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;amp;subset=cyrillic"
+          media="screen" rel="stylesheet" type="text/css">
 
 
     <!-- fotorama.css & fotorama.js. -->
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,7 +30,7 @@
 <body>
 <div class="container">
     <div class="header clearfix">
-        <h3><a href="">Welcome to ShareCloth Scanner</a> </h3>
+        <h3><a href="">Welcome to ShareCloth Scanner</a></h3>
         <div class="connection-state"><i class="fa fa-wifi" aria-hidden="true"></i></div>
     </div>
     <div class="container-fluid">
@@ -102,9 +102,12 @@
             <div class="phase-two phase-block ta-center">
                 <div class="phase-two__gallery">
                     <div class="fotorama mb20" data-width="400" data-height="300">
-                        <img src="http://i0.wp.com/www.ayushveda.com/dietfitness/wp-content/uploads/2008/11/salman-khan-body.jpg?fit=300%2C400" alt="" />
-                        <img src="http://bodyglove.com/wp-content/uploads/2015/03/BG_2016_Women_Chacha.jpg?x53053" alt="" />
-                        <img src="http://cdn.shopify.com/s/files/1/1159/7120/products/Body_only_grande.jpg?v=1454977406" alt="" />
+                        <img src="http://i0.wp.com/www.ayushveda.com/dietfitness/wp-content/uploads/2008/11/salman-khan-body.jpg?fit=300%2C400"
+                             alt=""/>
+                        <img src="http://bodyglove.com/wp-content/uploads/2015/03/BG_2016_Women_Chacha.jpg?x53053"
+                             alt=""/>
+                        <img src="http://cdn.shopify.com/s/files/1/1159/7120/products/Body_only_grande.jpg?v=1454977406"
+                             alt=""/>
                     </div>
 
                     <p><a href="#" class="btn btn-default btn-xlg">Начать сканирование</a></p>
@@ -163,20 +166,60 @@
             </div>
             <div class="phase-five phase-block">
                 <div class="phase-five__form mb20">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, sunt!</p>
-                    <form>
-                        <p class="mb20">Тут будет форма.. Результат будет равен id пользователя</p>
-                        <div class="">
-                            <input type="submit" value="Сохранить" class="btn btn-success btn-lg"/>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#new">Новый пользователь</a></li>
+                        <li role="presentation"><a href="#login">Зарегистрированный пользователь</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="new">
+                            <div class="row">
+                                <div class="col-sm-5 col-sm-offset-3">
+                                    <form class="new-user">
+                                        <div class="form-group">
+                                            <label for="login-phone">Сотовый номер телефона</label>
+                                            <input type="text" name="telephone" class="form-control" id="login-phone" placeholder="например, +7 987 123-12-12">
+                                        </div>
+                                        <div class="form-group" id="code-controls">
+                                            <label for="login-code">Под подтверждения</label>
+                                            <input type="text" name="code" class="form-control" id="login-code" placeholder="4-х значный код подтверждения">
+                                        </div>
+                                        <input type="submit" value="Активировать" class="btn btn-success btn-lg"/>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="phase-five__error -new mt20">
+                                <div class="alert alert-danger">
+
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                </div>
-                <div class="phase-five__error">
-                    <div class="alert alert-danger">
-                        Призошла ошибка во время отправки данных. Проверте правильность формы и повторите запрос
-                        позже.
+                        <div role="tabpanel" class="tab-pane" id="login">
+                            <div class="row">
+                                <div class="col-sm-5 col-sm-offset-3">
+                                    <form class="login-user">
+                                        <div class="form-group">
+                                            <label for="login-user">Email или Телефон</label>
+                                            <input type="text" class="form-control" id="login-user" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login-password">Пароль</label>
+                                            <input type="password" class="form-control" id="login-password" placeholder="">
+                                        </div>
+                                        <input type="submit" value="Авторизоваться" class="btn btn-success btn-lg"/>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="phase-five__error -login mt20">
+                                <div class="alert alert-danger">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="phase-six phase-block">
                 <div class="phase-six__content">
