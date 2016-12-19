@@ -22,8 +22,8 @@ var PhaseFiveModule = (function(){
             hideErrors();
             $codeControls.hide();
 
-            $newUserForm.find('input[type=text]').value('');
-            $loginUserForm.find('input[type=text]').value('');
+            $newUserForm.find('input[type=text]').val('');
+            $loginUserForm.find('input[type=text]').val('');
         }
     }
 

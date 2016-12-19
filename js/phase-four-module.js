@@ -2,21 +2,25 @@ var PhaseFourModule = (function () {
 
     var selectorModule, socketModule;
 
-    var $complete, $discard, $preview, $previewImg;
+    var $complete, $discard, $preview, $previewImg, $howTo;
 
     function onPageChange(num) {
         if (num == 4) {
             $preview.addClass('-loading');
+            $previewImg.attr('src', 'img/no-image.jpg');
             $complete.hide();
             $discard.hide();
+            $howTo.hide();
         }
     }
 
     function onSocketMessage(data) {
         if (data.command == SocketCommands.scanningSucceeded) {
             $preview.removeClass('-loading');
+            $previewImg.attr('src', data.link);
             $complete.show();
             $discard.show();
+            $howTo.show();
         }
     }
 
@@ -31,6 +35,8 @@ var PhaseFourModule = (function () {
         $discard = $('#discard');
         $preview = $('.phase-four__preview');
         $previewImg = $preview.find('img');
+
+        $howTo = $('.phase-four__howto');
 
 
         $previewImg.on('touchstart', function(e) {

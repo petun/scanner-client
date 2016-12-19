@@ -261,6 +261,9 @@ h1, h2, h3, h4, h5 {
     width: 400px;
     height: 500px;
     position: relative; }
+  .phase-four__howto {
+    font-size: 17px;
+    margin-top: 10px; }
 
 .phase-five {
   text-align: center; }
@@ -283,5 +286,8 @@ h1, h2, h3, h4, h5 {
   line-height: 1.4;
   text-align: center;
   right: 10%; }
+
+.nav-tabs li a {
+  font-family: 'Open Sans', sans-serif; }
 
 /*# sourceMappingURL=custom.css.map */

@@ -116,6 +116,11 @@ $ipad-width: 768px;
     height: 500px;
     position: relative;
   }
+
+  &__howto {
+    font-size: 17px;
+    margin-top: 10px;
+  }
 }
 
 .phase-five {
@@ -146,4 +151,8 @@ $ipad-width: 768px;
     text-align: center;
     right: 10%;
   }
+}
+
+.nav-tabs li a {
+  font-family: 'Open Sans', sans-serif;
 }
