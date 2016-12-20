@@ -35,7 +35,7 @@ var PhaseFiveModule = (function(){
 
         if (data.command == SocketCommands.userRegError) {
             $('input[type=submit]') .button('reset'); //@todo
-            $newUserError.text('Ошибка при регистрации проверке номера. Попробуйте еще раз.').show();
+            $newUserError.text('Ошибка при проверке номера. Возможно такой номер уже есть в системе. Попробуйте еще раз.').show();
         }
 
         if (data.command == SocketCommands.userRegConfirmError) {

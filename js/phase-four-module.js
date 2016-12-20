@@ -7,7 +7,7 @@ var PhaseFourModule = (function () {
     function onPageChange(num) {
         if (num == 4) {
             $preview.addClass('-loading');
-            $previewImg.attr('src', 'img/no-image.jpg');
+            $previewImg.attr('src', 'https://dummyimage.com/500x625/#ccc/fff.jpg');
             $complete.hide();
             $discard.hide();
             $howTo.hide();

@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5 {
   font-size: 25px;
   line-height: 1; }
   .connection-state.-established {
-    color: forestgreen; }
+    color: #2ecc71; }
   .connection-state.-lost {
     color: red; }
   .connection-state.-connecting {
@@ -125,6 +125,8 @@ h1, h2, h3, h4, h5 {
   padding: 5px 0;
   color: #777;
   border-top: 1px solid #e5e5e5; }
+  .footer p {
+    padding: 0 15px; }
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -150,7 +152,8 @@ h1, h2, h3, h4, h5 {
   .jumbotron {
     border-bottom: 0; } }
 .main-content {
-  padding: 0 0 50px 0; }
+  padding: 0 0 50px 0;
+  height: 797px; }
 
 .ui-slider .ui-slider-handle {
   width: 2.4em !important;
@@ -246,7 +249,7 @@ h1, h2, h3, h4, h5 {
   line-height: 150px;
   font-weight: bold;
   text-align: center;
-  margin: 0 0 20px; }
+  padding-top: 200px; }
 
 .phase-three__step {
   text-align: center;
@@ -257,13 +260,13 @@ h1, h2, h3, h4, h5 {
 .phase-four {
   text-align: center; }
   .phase-four__preview {
-    margin: 0 auto 20px;
-    width: 400px;
-    height: 500px;
+    margin: 0 auto 10px;
+    width: 500px;
+    height: 625px;
     position: relative; }
   .phase-four__howto {
     font-size: 17px;
-    margin-top: 10px; }
+    margin: 0 0 10px; }
 
 .phase-five {
   text-align: center; }

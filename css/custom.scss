@@ -91,7 +91,7 @@ $ipad-width: 768px;
     line-height: 150px;
     font-weight: bold;
     text-align: center;
-    margin: 0 0 20px;
+    padding-top: 200px;
   }
 }
 
@@ -111,15 +111,15 @@ $ipad-width: 768px;
 .phase-four {
   text-align: center;
   &__preview {
-    margin: 0 auto 20px;
-    width: 400px;
-    height: 500px;
+    margin: 0 auto 10px;
+    width: 500px;
+    height: 625px;
     position: relative;
   }
 
   &__howto {
     font-size: 17px;
-    margin-top: 10px;
+    margin: 0 0 10px;
   }
 }
 
