@@ -78,15 +78,28 @@ var PhaseFiveModule = (function(){
             $newUserError.hide();
 
             var $button = $newUserForm.find('[type=submit]');
+            var $telephone = $newUserForm.find('[name=telephone]');
+            var $code = $codeControls.find('input');
             $button.button('loading');
 
             var isCodeSend = $codeControls.css('display') == 'block';
-            var command = isCodeSend ? SocketCommands.userRegConfirm : SocketCommands.userReg;
 
-            socketModule.send({
-                command: command,
-                data: $newUserForm.serializeArray()
-            });
+            var command;
+
+            if (isCodeSend) {
+                command = {
+                    command: SocketCommands.userRegConfirm,
+                    telephone: $telephone.val(),
+                    code: $code.val()
+                };
+            } else {
+                command = {
+                    command: SocketCommands.userReg,
+                    telephone: $telephone.val()
+                }
+            }
+
+            socketModule.send(command);
         });
 
         $loginUserForm.on('submit', function(e) {
@@ -94,11 +107,15 @@ var PhaseFiveModule = (function(){
             $loginError.hide();
 
             var $button = $loginUserForm.find('[type=submit]');
+            var $login = $loginUserForm.find('[name=name]');
+            var $password = $loginUserForm.find('[name=password]');
+
             $button.button('loading');
 
             socketModule.send({
                 command: SocketCommands.userLogin,
-                data: $newUserForm.serializeArray()
+                name: $login.val(),
+                password: $password.val()
             });
         });
 
