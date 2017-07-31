@@ -2,7 +2,7 @@ $(function() {
 
     GlobalLoader.init();
 
-    SocketClientModule.init('ws://localhost:8001', GlobalLoader);
+    SocketClientModule.init('ws://127.0.0.1:8001', GlobalLoader);
 
     PhasePageSelectorModule.init();
     PhasePageSelectorModule.setActive(1);
