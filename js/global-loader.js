@@ -16,11 +16,13 @@ var GlobalLoader = (function () {
     }
 
     function _show() {
+        console.log('GlobalLoader: Loader show');
         $loader.show();
         return $self;
     }
 
     function _hide() {
+        console.log('GlobalLoader: Loader hide');
         $loader.hide();
         return $self;
     }
